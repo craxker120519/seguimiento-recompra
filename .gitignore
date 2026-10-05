@@ -1,0 +1,25 @@
+# Credenciales - NUNCA subir a control de versiones
+config/db_config.json
+config/secret_key.txt
+config/telegram_config.json
+config/telegram_offset.txt
+config/respaldos/
+
+# Base de datos con los datos reales del negocio (usuarios, seguimientos, etc.)
+config/negocio.db
+config/negocio.db-*
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs / temporales
+*.log
+
+# Estado y datos de demostracion que genera el sistema
+config/demo_compras.json
+config/salud_estado.json
+config/escalacion_estado.json
+config/facturas_pendientes_estado.json
+config/salud_config.json
+config/latido.url

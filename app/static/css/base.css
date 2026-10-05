@@ -1,0 +1,16 @@
+/* Colores y reglas comunes de todas las paginas (identidad ERP: negro, amarillo y grises). */
+:root {
+  --bg: #080808;
+  --card: #1e1e1e;
+  --card2: #353535;
+  --accent: #fcc304;
+  --accent-rgb: 252,195,4;
+  --accent-text: #171300;
+  --text: #e9e9e9;
+  --muted: #a5a5a5;
+  --muted-rgb: 165,165,165;
+  --good: #4ade80;
+  --bad: #f87171;
+  --border: #4b4b4b;
+}
+* { box-sizing: border-box; }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar sesión - ERP</title>
+<link rel="stylesheet" href="/css/base.css?v=__VERSION__">
+<link rel="stylesheet" href="/css/login.css?v=__VERSION__">
+</head>
+<body>
+  <div class="caja">
+    <img src="/logo-claro.png" alt="ERP" class="logo">
+    <h1>Buscador de filtros</h1>
+    <div class="sub">ERP — inicia sesión para continuar</div>
+    <div class="error" id="error"></div>
+    <form method="POST" action="/login">
+      <label for="username">Usuario</label>
+      <input type="text" id="username" name="username" required autofocus autocapitalize="off" autocorrect="off">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+  <script src="/js/login.js?v=__VERSION__"></script>
+</body>
+</html>

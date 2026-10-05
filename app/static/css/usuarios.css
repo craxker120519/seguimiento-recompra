@@ -1,0 +1,55 @@
+/* Pagina de usuarios y avisos de Telegram (administradores). */
+body { margin: 0; font-family: Calibri, "Segoe UI", -apple-system, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); padding: 24px; }
+a { color: var(--accent); text-decoration: none; }
+.volver { display: inline-block; margin-bottom: 20px; font-size: 0.85rem; }
+main { max-width: 720px; margin: 0 auto; }
+
+section { margin-bottom: 36px; }
+section h1 { font-size: 1.25rem; margin: 0 0 2px; }
+section .desc { color: var(--muted); font-size: 0.85rem; margin: 0 0 16px; }
+
+.caja { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.caja h2 { font-size: 0.95rem; margin: 0 0 4px; }
+.aviso { color: var(--muted); font-size: 0.85rem; }
+
+label { display: block; font-size: 0.85rem; color: var(--muted); margin: 12px 0 6px; }
+input, select { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 16px; }
+input:focus, select:focus { outline: 2px solid var(--accent); }
+
+button { padding: 10px 18px; border-radius: 8px; border: none; background: var(--accent); color: var(--accent-text); font-weight: 700; cursor: pointer; font-size: 0.9rem; }
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.5; cursor: default; }
+button.secundario { background: var(--card2); color: var(--text); }
+button.chico { padding: 6px 12px; font-size: 0.8rem; }
+
+.btn-link { background: none; border: none; color: var(--accent); font-size: 0.82rem; cursor: pointer; padding: 4px 0; font-weight: 600; }
+.btn-link:hover { text-decoration: underline; }
+
+.fila-acciones { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+th, td { text-align: left; padding: 12px 14px; font-size: 0.88rem; }
+th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid var(--border); }
+tr:not(:last-child) td { border-bottom: 1px solid #27364a; }
+td.acciones { text-align: right; white-space: nowrap; }
+.badge-rol { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.03em; }
+.badge-rol.admin { background: rgba(252,195,4,0.18); color: var(--accent); }
+.badge-rol.vendedor { background: rgba(165,165,165,0.15); color: var(--muted); }
+
+.fila-password { background: var(--bg); }
+.ayuda-password { color: var(--muted); font-size: 0.78rem; margin: -6px 0 10px; }
+.fila-password td { padding: 14px; }
+.form-password-inline { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+.form-password-inline > div { flex: 1; min-width: 160px; }
+.form-password-inline label { margin: 0 0 6px; }
+
+.mensaje { font-size: 0.85rem; margin-top: 10px; }
+.mensaje.ok { color: var(--good); }
+.mensaje.error { color: var(--bad); }
+
+@media (max-width: 640px) {
+  body { padding: 16px; }
+  button { padding: 12px 18px; font-size: 0.92rem; }
+  table { display: block; overflow-x: auto; }
+  .form-password-inline { flex-direction: column; align-items: stretch; }
+}

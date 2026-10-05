@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filtros - ERP</title>
+<link rel="stylesheet" href="/css/base.css?v=__VERSION__">
+<link rel="stylesheet" href="/css/index.css?v=__VERSION__">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="marca">
+    <img src="/logo-claro.png" alt="ERP" class="logo">
+    <h1>Buscador de filtros</h1>
+  </div>
+  <div class="cuenta">
+    <span id="nombreUsuario"></span>
+    <a href="/usuarios" id="linkUsuarios" style="display:none;">Usuarios</a>
+    <a href="/logout">Salir</a>
+  </div>
+</div>
+
+<main>
+<div class="tabs">
+  <div class="tab activo" data-tab="producto">Buscar producto</div>
+  <div class="tab" data-tab="cliente">Buscar cliente</div>
+  <div class="tab" data-tab="alertas">Contactar hoy</div>
+  <div class="tab" data-tab="resultados">Resultados</div>
+  <div class="tab" data-tab="catalogo">Catálogo</div>
+  <div class="tab" data-tab="carritos">Carritos de filtrado</div>
+</div>
+
+<div class="panel activo" id="panel-producto">
+  <div class="buscador">
+    <input type="text" id="inputProducto" placeholder="Código o nombre del filtro (ej. 926169)" autocomplete="off">
+    <div class="sugerencias" id="sugProducto"></div>
+  </div>
+  <div class="resultado" id="resultadoProducto"></div>
+</div>
+
+<div class="panel" id="panel-cliente">
+  <div class="buscador">
+    <input type="text" id="inputCliente" placeholder="Nombre del cliente (mínimo 2 letras)" autocomplete="off">
+    <div class="sugerencias" id="sugCliente"></div>
+  </div>
+  <div class="estado-busqueda" id="estadoBusquedaCliente"></div>
+  <div class="resultado" id="resultadoCliente"></div>
+</div>
+
+<div class="panel" id="panel-alertas">
+  <a class="btn-descargar" href="/api/exportar/alertas.xlsx">⬇ Descargar Excel</a>
+  <div class="resultado" id="resultadoAlertas"></div>
+</div>
+
+<div class="panel" id="panel-catalogo">
+  <div class="buscador">
+    <input type="text" id="inputAgregar" placeholder="Agregar filtro nuevo: buscar en ERP por código o nombre" autocomplete="off">
+    <div class="sugerencias" id="sugAgregar"></div>
+  </div>
+  <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+    <input type="text" id="filtroCatalogo" placeholder="Filtrar la lista de abajo por código o nombre..." style="flex:1;min-width:200px;">
+    <a class="btn-descargar" href="/api/exportar/catalogo.xlsx">⬇ Descargar Excel</a>
+  </div>
+  <div class="resultado" id="listaCatalogo"></div>
+</div>
+
+<div class="panel" id="panel-resultados">
+  <div class="res-periodos" id="resPeriodos">
+    <button type="button" class="res-periodo" data-dias="30">Últimos 30 días</button>
+    <button type="button" class="res-periodo activo" data-dias="90">Últimos 90 días</button>
+    <button type="button" class="res-periodo" data-dias="365">Último año</button>
+    <button type="button" class="res-periodo" data-dias="">Todo</button>
+    <a class="btn-descargar" id="resDescargar" href="/api/exportar/resultados.xlsx?dias=90" style="margin-left:auto">⬇ Descargar Excel</a>
+  </div>
+  <div id="resultadosContenido"><div class="vacio">Cargando...</div></div>
+</div>
+
+<div class="panel" id="panel-carritos">
+  <div class="vacio">Próximamente: aquí van a aparecer los carritos de filtrado.</div>
+</div>
+</main>
+
+<footer>
+  © 2026 DAVLI — Todos los derechos reservados
+  <span class="version" id="footerVersion"></span>
+</footer>
+
+<script src="/js/formato.js?v=__VERSION__"></script>
+<script src="/js/estados.js?v=__VERSION__"></script>
+<script src="/js/componentes.js?v=__VERSION__"></script>
+<script src="/js/api.js?v=__VERSION__"></script>
+<script src="/js/edicion.js?v=__VERSION__"></script>
+<script src="/js/seguimiento.js?v=__VERSION__"></script>
+<script src="/js/resultados.js?v=__VERSION__"></script>
+<script src="/js/alertas.js?v=__VERSION__"></script>
+<script src="/js/catalogo.js?v=__VERSION__"></script>
+<script src="/js/navegacion-tarjetas.js?v=__VERSION__"></script>
+<script src="/js/producto.js?v=__VERSION__"></script>
+<script src="/js/cliente.js?v=__VERSION__"></script>
+<script src="/js/tabs.js?v=__VERSION__"></script>
+</body>
+</html>

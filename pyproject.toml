@@ -1,0 +1,29 @@
+[project]
+name = "buscador-filtros"
+description = "Buscador de filtros (ERP): recontacto de clientes por vida util, maquinas y piezas compradas"
+requires-python = ">=3.12"
+dynamic = ["version"]
+dependencies = ["flask", "pyodbc", "openpyxl", "requests"]
+
+[tool.setuptools.dynamic]
+version = { file = "VERSION" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["config", "docs"]
+
+[tool.ruff.lint]
+# E/W: estilo, F: errores y variables sin usar, I: imports ordenados, B: errores comunes, UP: sintaxis moderna
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = [
+    "E501",   # el largo de linea lo maneja el formateador
+    "B008",   # llamadas en argumentos por defecto (no aplica aqui)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]

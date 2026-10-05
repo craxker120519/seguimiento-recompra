@@ -1,0 +1,6 @@
+# Los archivos que se copian al servidor Linux deben quedar siempre con saltos de linea LF
+deploy/* text eol=lf
+*.sh text eol=lf
+*.service text eol=lf
+*.timer text eol=lf
+Caddyfile* text eol=lf
